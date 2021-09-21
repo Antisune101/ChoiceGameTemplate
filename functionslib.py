@@ -10,22 +10,21 @@ def type_message(message, delay):
         time.sleep(delay)
 
 def chapter(name):
-    os.system('cls')
-    for i in dt.game[name]['dialogue']:
+    os.system('cls')#clears screen when start
+    for i in dt.game[name]['dialogue']:#types out all the dialogue
         type_message((i + "\n"), 0.1)
-    type_message(dt.game[name]['prompt'], 0.1)
+    type_message(dt.game[name]['prompt'], 0.1)#prompts user
     user_input = ''
-    while True:
+    while True:#gets valid user input
         user_input = input(">")
         if user_input not in dt.game[name]['options']:
             print("Invalid Input")
             continue
         if user_input in dt.game[name]['options']:
             break
-    chapter(dt.game[name]['switch'][user_input])
+    chapter(dt.game[name]['switch'][user_input])#goes to next chapter based on user input
 
-def main_menu():
-    #main menu here
+def main_menu():#main menu here
     print("Welcome to the Game")
     os.system("pause")
     chapter('start')
