@@ -1,0 +1,1 @@
+A Simple Choice Game Template for Python. Edit the gamedata.py file to create your story
